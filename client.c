@@ -110,7 +110,7 @@ int main(int argc, char**argv)
 		exit(1);
 	}
 
-	//進入大廳
+	//加入
 	printf("Enter your name: ");
 	fgets(username, USERNAME_BUFF, stdin);
 	username[strlen(username) - 1] = 0;
