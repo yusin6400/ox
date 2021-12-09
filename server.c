@@ -187,7 +187,7 @@ void rcv_snd(int n)
             {
                 int p1,p2;
                 send(connfd[n], choose_rival, strlen(choose_rival), 0); //詢問選擇對手
-                length = recv(connfd[n], who, MAXLINE, 0); //got a name to fight
+                length = recv(connfd[n], who, MAXLINE, 0);
                 who[length]=0;
                 printf("遊戲開始\n");
                 printf("請輸入座標(0 0)~(2 2)\n");
@@ -292,7 +292,7 @@ void rcv_snd(int n)
                         strcpy(msg_send,"平手\n");
                         send(connfd[p1], msg_send, strlen(msg_send), 0);
                         send(connfd[p2], msg_send, strlen(msg_send), 0);
-                        printf("遊戲結束, 平手\n");
+                        printf("平手\n");
                         break;
                     }
                 }
