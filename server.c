@@ -85,7 +85,8 @@ int main()
     serv_addr.sin_port = htons(SERV_PORT);	//port80
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     //用bind開監聽器
-    if(bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0) {
+    if(bind(listenfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0)
+    {
         printf("Bind failed.\n");
         return -1;
     }
@@ -229,8 +230,7 @@ void rcv_snd(int n)
                         send(connfd[p2], msg_send, strlen(msg_send), 0);
                         num_x=atoi(message);
                         num_y=atoi(message+2);
-                        if(! ((num_x >= 0 && num_x < 3)&&(num_y >= 0 && num_y < 3))
-                           || (array[num_x][num_y] != OX_blank))
+                        if(! ((num_x >= 0 && num_x < 3)&&(num_y >= 0 && num_y < 3)) || (array[num_x][num_y] != OX_blank))
                         {
                             printf("輸入位置錯誤！\n");
                             strcpy(msg_send,"輸入位置錯誤！\n");
@@ -254,8 +254,7 @@ void rcv_snd(int n)
                         send(connfd[p1], msg_send, strlen(msg_send), 0);
                         num_x=atoi(message);
                         num_y=atoi(message+2);
-                        if(! ((num_x >= 0 && num_x < 3)&&(num_y >= 0 && num_y < 3))
-                           || (array[num_x][num_y] != OX_blank))
+                        if(! ((num_x >= 0 && num_x < 3)&&(num_y >= 0 && num_y < 3)) || (array[num_x][num_y] != OX_blank))
                         {
                             printf("輸入位置錯誤！\n");
                             strcpy(msg_send,"輸入位置錯誤！\n");
